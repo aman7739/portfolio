@@ -52,19 +52,42 @@ if(readMoreBtn) {
 }
 
 /* ==================== Dark/Light Mode Toggle ==================== */
-let themeToggle = document.getElementById('theme-toggle');
-let body = document.body;
+const themeToggle = document.getElementById('theme-toggle');
+const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+const body = document.body;
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-mode');
-        
-        if(body.classList.contains('light-mode')) {
+function handleThemeToggle() {
+    body.classList.toggle('light-mode');
+    const isLight = body.classList.contains('light-mode');
+    
+    // Update desktop icon
+    if (themeToggle) {
+        if (isLight) {
             themeToggle.classList.replace('fa-moon', 'fa-sun');
         } else {
             themeToggle.classList.replace('fa-sun', 'fa-moon');
         }
-    });
+    }
+
+    // Update mobile icon & label
+    if (mobileThemeToggle) {
+        const mobIcon = mobileThemeToggle.querySelector('i');
+        const mobText = mobileThemeToggle.querySelector('.mobile-toggle-text');
+        if (isLight) {
+            if (mobIcon) mobIcon.classList.replace('fa-moon', 'fa-sun');
+            if (mobText) mobText.textContent = 'Light Mode';
+        } else {
+            if (mobIcon) mobIcon.classList.replace('fa-sun', 'fa-moon');
+            if (mobText) mobText.textContent = 'Dark Mode';
+        }
+    }
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', handleThemeToggle);
+}
+if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', handleThemeToggle);
 }
 
 /* ==================== Typing Animation ==================== */
