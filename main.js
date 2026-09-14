@@ -1,4 +1,4 @@
-/* ==================== Toggle Icon Navbar ==================== */
+/* Toggle Icon Navbar  */
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -7,7 +7,7 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
-/* ==================== Scroll Sections Active Link ==================== */
+/*  Scroll Sections Active Link  */
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
@@ -35,7 +35,7 @@ window.onscroll = () => {
     navbar.classList.remove('active');
 };
 
-/* ==================== Read More Button Toggle Logic ==================== */
+/*  Read More Button Toggle Logic  */
 const readMoreBtn = document.getElementById('readMoreBtn');
 const moreInfoDiv = document.querySelector('.about-more-info');
 
@@ -51,7 +51,7 @@ if(readMoreBtn) {
     });
 }
 
-/* ==================== Dark/Light Mode Toggle ==================== */
+/*  Dark/Light Mode Toggle  */
 const themeToggle = document.getElementById('theme-toggle');
 const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
 const body = document.body;
@@ -90,7 +90,7 @@ if (mobileThemeToggle) {
     mobileThemeToggle.addEventListener('click', handleThemeToggle);
 }
 
-/* ==================== Typing Animation ==================== */
+/*  Typing Animation  */
 if (typeof Typed !== 'undefined') {
     const typed = new Typed('.multiple-text', {
         strings: ['Full-Stack Developer', 'AI/ML & Cloud Explorer', 'Open Source Contributor'],
@@ -101,7 +101,7 @@ if (typeof Typed !== 'undefined') {
     });
 }
 
-/* ==================== Timeline Animation ==================== */
+/*  Timeline Animation  */
 const items = document.querySelectorAll(".timeline-item");
 
 const observer = new IntersectionObserver(
@@ -193,7 +193,7 @@ function resetForm() {
     document.getElementById('submit').disabled = false;
 }
 
-/* ==================== 3D Tilt Effect on Cards ==================== */
+/*  3D Tilt Effect on Cards  */
 function init3DTilt() {
     if (!window.matchMedia('(pointer: fine)').matches) return;
 
