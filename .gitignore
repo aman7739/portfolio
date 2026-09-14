@@ -1,0 +1,10 @@
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.BIN/
+*.tmp
+*.bak
+.DS_Store
+
+# Documentation / Private memory
+memory.md
